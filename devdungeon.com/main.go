@@ -39,11 +39,6 @@ func ScrapeHTML() {
 		row := new(Article)
 		row.Title = sel.Find("article a").Text()
 		row.Content = sel.Find("article .field-item").Text()
-		// link := sel.Find("article a href").Text()
-		// log.Println(link)
-		// row.Title = sel.Find(".post-card-title").Text()
-		// row.URL, _ = sel.Find(".post-card-content-link").Attr("href")
-		// row.Category = sel.Find(".post-card-tags").Text()
 		rows = append(rows, *row)
 	})
 
@@ -51,6 +46,5 @@ func ScrapeHTML() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	log.Println(string(bts))
 }
